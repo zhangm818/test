@@ -10,6 +10,9 @@ class IndexHandler(tornado.web.RequestHandler):
     def get(self):
         username = self.get_argument('username','hello')
         self.write(username + ',friendly user!')
+    def write_error(self,status_code,**kwargs):
+        self.write("bu hao le , you 有一个 %d error." % status_code)
+
 
 if __name__ == "__main__":
     tornado.options.parse_command_line()
